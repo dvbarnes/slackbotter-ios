@@ -1,0 +1,613 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		39110E2A1B605E4700D971B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 39110E291B605E4700D971B7 /* main.m */; };
+		39110E2D1B605E4700D971B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39110E2C1B605E4700D971B7 /* AppDelegate.m */; };
+		39110E331B605E4700D971B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39110E311B605E4700D971B7 /* Main.storyboard */; };
+		39110E381B605E4700D971B7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39110E361B605E4700D971B7 /* LaunchScreen.xib */; };
+		39110E441B605E4700D971B7 /* SlackBotterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 39110E431B605E4700D971B7 /* SlackBotterTests.m */; };
+		39110E4F1B60607700D971B7 /* SLKBBot.m in Sources */ = {isa = PBXBuildFile; fileRef = 39110E4E1B60607700D971B7 /* SLKBBot.m */; };
+		3918321D1B86564700052001 /* SLKBBotMainCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3918321C1B86564700052001 /* SLKBBotMainCollectionViewController.m */; };
+		391832231B8662AF00052001 /* SLKBBotCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 391832221B8662AF00052001 /* SLKBBotCollectionViewCell.m */; };
+		391832261B8B676A00052001 /* SLKBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 391832251B8B676A00052001 /* SLKBUser.m */; };
+		391832281B8CD35400052001 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 391832271B8CD35400052001 /* Image.xcassets */; };
+		3940665E1B90998E000C1190 /* SLKBRealTimeMessagingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3940665D1B90998E000C1190 /* SLKBRealTimeMessagingManager.m */; };
+		394DCBB71B9C9684008DEC60 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 394DCBB61B9C9684008DEC60 /* Secrets.plist */; };
+		39B7220F1B7B660300B79F46 /* SLKBotTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B7220E1B7B660300B79F46 /* SLKBotTableViewCell.m */; };
+		39C5478E1B60695D00BD2658 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 39C5478D1B60695D00BD2658 /* placeholder.png */; };
+		39C547911B606A3D00BD2658 /* SLKBSendMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C547901B606A3D00BD2658 /* SLKBSendMessageViewController.m */; };
+		39C547941B6091BF00BD2658 /* SLKBNewBotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C547931B6091BF00BD2658 /* SLKBNewBotViewController.m */; };
+		39C547971B61086100BD2658 /* SLKBUtilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C547961B61086100BD2658 /* SLKBUtilityManager.m */; };
+		39E593531B61605500EF40BD /* SLKBChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E593521B61605500EF40BD /* SLKBChannel.m */; };
+		9A4C34AC50DCF49806416B75 /* libPods-SlackBotter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0AC6F9A7DABFD4ADFA1CDAF /* libPods-SlackBotter.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		39110E3E1B605E4700D971B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 39110E1C1B605E4700D971B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 39110E231B605E4700D971B7;
+			remoteInfo = SlackBotter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		17AB9C9CD4AD5D58405C0BFA /* Pods-SlackBotter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlackBotter.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlackBotter/Pods-SlackBotter.release.xcconfig"; sourceTree = "<group>"; };
+		39110E241B605E4700D971B7 /* SlackBotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlackBotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		39110E281B605E4700D971B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39110E291B605E4700D971B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		39110E2B1B605E4700D971B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		39110E2C1B605E4700D971B7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		39110E2E1B605E4700D971B7 /* SLKBMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLKBMainViewController.h; sourceTree = "<group>"; };
+		39110E2F1B605E4700D971B7 /* SLKBMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLKBMainViewController.m; sourceTree = "<group>"; };
+		39110E321B605E4700D971B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		39110E371B605E4700D971B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		39110E3D1B605E4700D971B7 /* SlackBotterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlackBotterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		39110E421B605E4700D971B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39110E431B605E4700D971B7 /* SlackBotterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlackBotterTests.m; sourceTree = "<group>"; };
+		39110E4D1B60607700D971B7 /* SLKBBot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKBBot.h; sourceTree = "<group>"; };
+		39110E4E1B60607700D971B7 /* SLKBBot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKBBot.m; sourceTree = "<group>"; };
+		3918321B1B86564700052001 /* SLKBBotMainCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKBBotMainCollectionViewController.h; sourceTree = "<group>"; };
+		3918321C1B86564700052001 /* SLKBBotMainCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKBBotMainCollectionViewController.m; sourceTree = "<group>"; };
+		391832211B8662AF00052001 /* SLKBBotCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKBBotCollectionViewCell.h; sourceTree = "<group>"; };
+		391832221B8662AF00052001 /* SLKBBotCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKBBotCollectionViewCell.m; sourceTree = "<group>"; };
+		391832241B8B676A00052001 /* SLKBUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKBUser.h; sourceTree = "<group>"; };
+		391832251B8B676A00052001 /* SLKBUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKBUser.m; sourceTree = "<group>"; };
+		391832271B8CD35400052001 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
+		3940665C1B90998E000C1190 /* SLKBRealTimeMessagingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKBRealTimeMessagingManager.h; sourceTree = "<group>"; };
+		3940665D1B90998E000C1190 /* SLKBRealTimeMessagingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKBRealTimeMessagingManager.m; sourceTree = "<group>"; };
+		394DCBB61B9C9684008DEC60 /* Secrets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
+		39B7220D1B7B660300B79F46 /* SLKBotTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKBotTableViewCell.h; sourceTree = "<group>"; };
+		39B7220E1B7B660300B79F46 /* SLKBotTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKBotTableViewCell.m; sourceTree = "<group>"; };
+		39C5478D1B60695D00BD2658 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		39C5478F1B606A3D00BD2658 /* SLKBSendMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKBSendMessageViewController.h; sourceTree = "<group>"; };
+		39C547901B606A3D00BD2658 /* SLKBSendMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKBSendMessageViewController.m; sourceTree = "<group>"; };
+		39C547921B6091BF00BD2658 /* SLKBNewBotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKBNewBotViewController.h; sourceTree = "<group>"; };
+		39C547931B6091BF00BD2658 /* SLKBNewBotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKBNewBotViewController.m; sourceTree = "<group>"; };
+		39C547951B61086100BD2658 /* SLKBUtilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKBUtilityManager.h; sourceTree = "<group>"; };
+		39C547961B61086100BD2658 /* SLKBUtilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKBUtilityManager.m; sourceTree = "<group>"; };
+		39E593511B61605500EF40BD /* SLKBChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKBChannel.h; sourceTree = "<group>"; };
+		39E593521B61605500EF40BD /* SLKBChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKBChannel.m; sourceTree = "<group>"; };
+		DAF0D71137BB550806090D8D /* Pods-SlackBotter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlackBotter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlackBotter/Pods-SlackBotter.debug.xcconfig"; sourceTree = "<group>"; };
+		F0AC6F9A7DABFD4ADFA1CDAF /* libPods-SlackBotter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SlackBotter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		39110E211B605E4700D971B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A4C34AC50DCF49806416B75 /* libPods-SlackBotter.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39110E3A1B605E4700D971B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		290BEA85F1488594CA729B24 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DAF0D71137BB550806090D8D /* Pods-SlackBotter.debug.xcconfig */,
+				17AB9C9CD4AD5D58405C0BFA /* Pods-SlackBotter.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		39110E1B1B605E4700D971B7 = {
+			isa = PBXGroup;
+			children = (
+				39110E261B605E4700D971B7 /* SlackBotter */,
+				39110E401B605E4700D971B7 /* SlackBotterTests */,
+				39110E251B605E4700D971B7 /* Products */,
+				290BEA85F1488594CA729B24 /* Pods */,
+				63A2DA6FB663EAAF825C5844 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		39110E251B605E4700D971B7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				39110E241B605E4700D971B7 /* SlackBotter.app */,
+				39110E3D1B605E4700D971B7 /* SlackBotterTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		39110E261B605E4700D971B7 /* SlackBotter */ = {
+			isa = PBXGroup;
+			children = (
+				39110E2B1B605E4700D971B7 /* AppDelegate.h */,
+				39110E2C1B605E4700D971B7 /* AppDelegate.m */,
+				391832291B8CD92500052001 /* _Archived */,
+				3918322E1B8CDA0C00052001 /* Managers */,
+				3918322A1B8CD95E00052001 /* Models */,
+				3918322B1B8CD96A00052001 /* Storyboard and Images */,
+				39110E271B605E4700D971B7 /* Supporting Files */,
+				3918322C1B8CD9E000052001 /* View Controllers */,
+			);
+			path = SlackBotter;
+			sourceTree = "<group>";
+		};
+		39110E271B605E4700D971B7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				39C5478D1B60695D00BD2658 /* placeholder.png */,
+				394DCBB61B9C9684008DEC60 /* Secrets.plist */,
+				39110E281B605E4700D971B7 /* Info.plist */,
+				39110E291B605E4700D971B7 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		39110E401B605E4700D971B7 /* SlackBotterTests */ = {
+			isa = PBXGroup;
+			children = (
+				39110E431B605E4700D971B7 /* SlackBotterTests.m */,
+				39110E411B605E4700D971B7 /* Supporting Files */,
+			);
+			path = SlackBotterTests;
+			sourceTree = "<group>";
+		};
+		39110E411B605E4700D971B7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				39110E421B605E4700D971B7 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		391832291B8CD92500052001 /* _Archived */ = {
+			isa = PBXGroup;
+			children = (
+				39110E2E1B605E4700D971B7 /* SLKBMainViewController.h */,
+				39110E2F1B605E4700D971B7 /* SLKBMainViewController.m */,
+			);
+			name = _Archived;
+			sourceTree = "<group>";
+		};
+		3918322A1B8CD95E00052001 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				391832241B8B676A00052001 /* SLKBUser.h */,
+				391832251B8B676A00052001 /* SLKBUser.m */,
+				39E593511B61605500EF40BD /* SLKBChannel.h */,
+				39E593521B61605500EF40BD /* SLKBChannel.m */,
+				39110E4D1B60607700D971B7 /* SLKBBot.h */,
+				39110E4E1B60607700D971B7 /* SLKBBot.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		3918322B1B8CD96A00052001 /* Storyboard and Images */ = {
+			isa = PBXGroup;
+			children = (
+				39110E311B605E4700D971B7 /* Main.storyboard */,
+				391832271B8CD35400052001 /* Image.xcassets */,
+				39110E361B605E4700D971B7 /* LaunchScreen.xib */,
+			);
+			name = "Storyboard and Images";
+			sourceTree = "<group>";
+		};
+		3918322C1B8CD9E000052001 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3918322D1B8CD9EE00052001 /* Support Cells */,
+				3918321B1B86564700052001 /* SLKBBotMainCollectionViewController.h */,
+				3918321C1B86564700052001 /* SLKBBotMainCollectionViewController.m */,
+				39C5478F1B606A3D00BD2658 /* SLKBSendMessageViewController.h */,
+				39C547901B606A3D00BD2658 /* SLKBSendMessageViewController.m */,
+				39C547921B6091BF00BD2658 /* SLKBNewBotViewController.h */,
+				39C547931B6091BF00BD2658 /* SLKBNewBotViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		3918322D1B8CD9EE00052001 /* Support Cells */ = {
+			isa = PBXGroup;
+			children = (
+				391832211B8662AF00052001 /* SLKBBotCollectionViewCell.h */,
+				391832221B8662AF00052001 /* SLKBBotCollectionViewCell.m */,
+				39B7220D1B7B660300B79F46 /* SLKBotTableViewCell.h */,
+				39B7220E1B7B660300B79F46 /* SLKBotTableViewCell.m */,
+			);
+			name = "Support Cells";
+			sourceTree = "<group>";
+		};
+		3918322E1B8CDA0C00052001 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				39C547951B61086100BD2658 /* SLKBUtilityManager.h */,
+				39C547961B61086100BD2658 /* SLKBUtilityManager.m */,
+				3940665C1B90998E000C1190 /* SLKBRealTimeMessagingManager.h */,
+				3940665D1B90998E000C1190 /* SLKBRealTimeMessagingManager.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		63A2DA6FB663EAAF825C5844 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F0AC6F9A7DABFD4ADFA1CDAF /* libPods-SlackBotter.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		39110E231B605E4700D971B7 /* SlackBotter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39110E471B605E4700D971B7 /* Build configuration list for PBXNativeTarget "SlackBotter" */;
+			buildPhases = (
+				3DA98B3B7FB7422305BB5B1D /* Check Pods Manifest.lock */,
+				39110E201B605E4700D971B7 /* Sources */,
+				39110E211B605E4700D971B7 /* Frameworks */,
+				39110E221B605E4700D971B7 /* Resources */,
+				C50CA3AC71611D32B568EE87 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SlackBotter;
+			productName = SlackBotter;
+			productReference = 39110E241B605E4700D971B7 /* SlackBotter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		39110E3C1B605E4700D971B7 /* SlackBotterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39110E4A1B605E4700D971B7 /* Build configuration list for PBXNativeTarget "SlackBotterTests" */;
+			buildPhases = (
+				39110E391B605E4700D971B7 /* Sources */,
+				39110E3A1B605E4700D971B7 /* Frameworks */,
+				39110E3B1B605E4700D971B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				39110E3F1B605E4700D971B7 /* PBXTargetDependency */,
+			);
+			name = SlackBotterTests;
+			productName = SlackBotterTests;
+			productReference = 39110E3D1B605E4700D971B7 /* SlackBotterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		39110E1C1B605E4700D971B7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = BookedOut;
+				TargetAttributes = {
+					39110E231B605E4700D971B7 = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = LUA2547QWQ;
+					};
+					39110E3C1B605E4700D971B7 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 39110E231B605E4700D971B7;
+					};
+				};
+			};
+			buildConfigurationList = 39110E1F1B605E4700D971B7 /* Build configuration list for PBXProject "SlackBotter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 39110E1B1B605E4700D971B7;
+			productRefGroup = 39110E251B605E4700D971B7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				39110E231B605E4700D971B7 /* SlackBotter */,
+				39110E3C1B605E4700D971B7 /* SlackBotterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		39110E221B605E4700D971B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39110E331B605E4700D971B7 /* Main.storyboard in Resources */,
+				394DCBB71B9C9684008DEC60 /* Secrets.plist in Resources */,
+				391832281B8CD35400052001 /* Image.xcassets in Resources */,
+				39C5478E1B60695D00BD2658 /* placeholder.png in Resources */,
+				39110E381B605E4700D971B7 /* LaunchScreen.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39110E3B1B605E4700D971B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3DA98B3B7FB7422305BB5B1D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C50CA3AC71611D32B568EE87 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SlackBotter/Pods-SlackBotter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		39110E201B605E4700D971B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39B7220F1B7B660300B79F46 /* SLKBotTableViewCell.m in Sources */,
+				39C547911B606A3D00BD2658 /* SLKBSendMessageViewController.m in Sources */,
+				39110E2D1B605E4700D971B7 /* AppDelegate.m in Sources */,
+				391832261B8B676A00052001 /* SLKBUser.m in Sources */,
+				39110E4F1B60607700D971B7 /* SLKBBot.m in Sources */,
+				3940665E1B90998E000C1190 /* SLKBRealTimeMessagingManager.m in Sources */,
+				3918321D1B86564700052001 /* SLKBBotMainCollectionViewController.m in Sources */,
+				39C547971B61086100BD2658 /* SLKBUtilityManager.m in Sources */,
+				39E593531B61605500EF40BD /* SLKBChannel.m in Sources */,
+				391832231B8662AF00052001 /* SLKBBotCollectionViewCell.m in Sources */,
+				39110E2A1B605E4700D971B7 /* main.m in Sources */,
+				39C547941B6091BF00BD2658 /* SLKBNewBotViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39110E391B605E4700D971B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39110E441B605E4700D971B7 /* SlackBotterTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		39110E3F1B605E4700D971B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 39110E231B605E4700D971B7 /* SlackBotter */;
+			targetProxy = 39110E3E1B605E4700D971B7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		39110E311B605E4700D971B7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				39110E321B605E4700D971B7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		39110E361B605E4700D971B7 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				39110E371B605E4700D971B7 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		39110E451B605E4700D971B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		39110E461B605E4700D971B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		39110E481B605E4700D971B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAF0D71137BB550806090D8D /* Pods-SlackBotter.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = SlackBotter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		39110E491B605E4700D971B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17AB9C9CD4AD5D58405C0BFA /* Pods-SlackBotter.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = SlackBotter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		39110E4B1B605E4700D971B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SlackBotterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlackBotter.app/SlackBotter";
+			};
+			name = Debug;
+		};
+		39110E4C1B605E4700D971B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SlackBotterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlackBotter.app/SlackBotter";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		39110E1F1B605E4700D971B7 /* Build configuration list for PBXProject "SlackBotter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39110E451B605E4700D971B7 /* Debug */,
+				39110E461B605E4700D971B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		39110E471B605E4700D971B7 /* Build configuration list for PBXNativeTarget "SlackBotter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39110E481B605E4700D971B7 /* Debug */,
+				39110E491B605E4700D971B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		39110E4A1B605E4700D971B7 /* Build configuration list for PBXNativeTarget "SlackBotterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39110E4B1B605E4700D971B7 /* Debug */,
+				39110E4C1B605E4700D971B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 39110E1C1B605E4700D971B7 /* Project object */;
+}
