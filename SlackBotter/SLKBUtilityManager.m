@@ -135,11 +135,22 @@
 			slackUser.profileImage72 = userDict[@"profile"][@"image_72"];
 			[self.arrayOfUsers addObject:slackUser];
 		}
+		
+		[self generateDefaultUsers];
+		
 		[[NSNotificationCenter defaultCenter] postNotificationName:@"SLACKUSERSREADY" object:nil];
 	} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 		NSLog(@"Fail");
 		[[[UIAlertView alloc] initWithTitle:@"Failed To Get Channels" message:@"Failed To Get Channels! Try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
 	}];
+}
+
+- (void)generateDefaultUsers {
+	SLKBUser *channelUser = [[SLKBUser alloc] init];
+	channelUser.username = @"channel";
+	channelUser.realname = @"Channel";
+	channelUser.profileImage72 = nil;
+	[self.arrayOfUsers addObject:channelUser];
 }
 
 - (NSArray *)allBots {
