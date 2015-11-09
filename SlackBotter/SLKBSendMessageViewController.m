@@ -256,7 +256,7 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
 }
 
 - (NSDictionary *)generateParams {
-	return  @{ @"token" : [SLKBUtilityManager defaultManager].apiKey, @"text" : self.textView.text , @"icon_url" :self.bot.iconImageURL, @"username" : self.bot.botName, @"channel" : [SLKBUtilityManager defaultManager].currentChannel,@"parse" : @"full", @"link_names" : @(1)};
+	return  @{ @"token" : [SLKBUtilityManager defaultManager].apiKey, @"text" : self.textView.text , @"icon_url" :self.bot.iconImageURL, @"username" : self.bot.botName, @"channel" : [SLKBUtilityManager defaultManager].currentChannel, @"link_names" : @(1)};
 }
 
 - (UIToolbar *)generateDoneToolbarWithSize:(CGSize)size withTarget:(id)target andSelector:(SEL)selector {
