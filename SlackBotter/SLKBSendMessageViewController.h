@@ -9,7 +9,7 @@
 @import Foundation;
 @import UIKit;
 #import "SLKBBot.h"
-#import <SlackTextViewController/Classes/SLKTextViewController.h>
+#import <SlackTextViewController/SLKTextViewController.h>
 @interface SLKBSendMessageViewController : SLKTextViewController
 - (instancetype)initFrame:(CGRect)frame andBot:(SLKBBot *)bot;
 @end

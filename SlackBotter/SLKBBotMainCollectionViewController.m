@@ -16,10 +16,13 @@
 @interface SLKBBotMainCollectionViewController ()
 @property (nonatomic, strong) NSData *jsonData;
 @property (nonatomic, strong) UIBarButtonItem *addBot;
+@property (nonatomic, getter=isInTrashMode) BOOL trashMode;
 @property (weak, nonatomic) IBOutlet UICollectionView *botCollectionView;
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *botCollectionViewLayout;
 @property (nonatomic, strong) NSMutableArray *arrayOfBots;
 @property (nonatomic, strong) UIToolbar *toolbar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *trashButton;
+@property (nonatomic, strong) NSMutableArray *botsToDelete;
 @end
 static NSString * CellIdentifier = @"BotItem";
 
@@ -28,6 +31,9 @@ static NSString * CellIdentifier = @"BotItem";
 #pragma mark - View Lifecycle
 -(void)viewDidLoad {
 	[super viewDidLoad];
+	self.trashMode = NO;
+	self.botsToDelete = [NSMutableArray new];
+	
 	[[NSNotificationCenter defaultCenter] addObserver:self
 											 selector:@selector(loadBots)
 												 name:@"SLKBBotNewBot"
@@ -42,6 +48,12 @@ static NSString * CellIdentifier = @"BotItem";
 											 selector:@selector(resetCollection)
 												 name:@"SLKBBotsReady"
 											   object:nil];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(resetCollectionDeleted)
+												 name:@"SLKBBotsDeleted"
+											   object:nil];
+
 	[self addUI];
 	[self.botCollectionView registerClass:[SLKBBotCollectionViewCell class]
 			   forCellWithReuseIdentifier:CellIdentifier];
@@ -90,24 +102,53 @@ static NSString * CellIdentifier = @"BotItem";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 	SLKBBotCollectionViewCell *cell  = (SLKBBotCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
 	SLKBBot *bot = [SLKBUtilityManager defaultManager].allBots[indexPath.row];
-	[UIView animateWithDuration:.15 delay:0 options:(UIViewAnimationOptionAllowUserInteraction) animations:^{
-		[self updateTitle:bot.botName];
-		cell.imageView.transform = CGAffineTransformMakeScale(1.25, 1.25);
-	} completion:^(BOOL finished){
+	if (!self.isInTrashMode) {
+		[UIView animateWithDuration:.15 delay:0 options:(UIViewAnimationOptionAllowUserInteraction) animations:^{
+			[self updateTitle:bot.botName];
+			cell.imageView.transform = CGAffineTransformMakeScale(1.25, 1.25);
+		} completion:^(BOOL finished){
 		 [UIView animateWithDuration:.15 animations:^{
 			 cell.imageView.transform = CGAffineTransformIdentity;
 		 } completion:^(BOOL finished) {
 			 SLKBSendMessageViewController *sender = [[SLKBSendMessageViewController alloc] initFrame:self.view.frame andBot:bot];
+			 [self resetCell:cell];
 			 UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:sender];
 			 [self presentViewController:navController animated:YES completion:nil];
 		 }];
 	 }];
+	}
+	else {
+		if (![self.botsToDelete containsObject:bot.parseObject]) {
+			cell.imageView.alpha = .5;
+			cell.imageView.layer.borderColor = [UIColor orangeColor].CGColor;
+			cell.imageView.layer.borderWidth = 2;
+			[self.botsToDelete addObject:bot.parseObject];
+			self.trashButton.tintColor = [UIColor redColor];
+		}
+		else {
+			[self resetCell:cell];
+			[self.botsToDelete removeObject:bot.parseObject];
+			self.trashButton.tintColor = (self.botsToDelete.count) ? [UIColor redColor] : [UIColor orangeColor];
+		}
+	}
+}
+
+- (void)resetCell:(SLKBBotCollectionViewCell *)cell {
+	cell.imageView.alpha = 1;
+	cell.imageView.layer.borderColor = [UIColor clearColor].CGColor;
+	cell.imageView.layer.borderWidth = 0;
+	
 }
 
 #pragma mark - Bots
 - (void)resetCollection {
 	[self.botCollectionViewLayout invalidateLayout];
 	[self.botCollectionView reloadData];
+}
+
+- (void)resetCollectionDeleted {
+	[self.botsToDelete removeAllObjects];
+	[self resetCollection];
 }
 
 - (void)addABot {
@@ -144,6 +185,17 @@ static NSString * CellIdentifier = @"BotItem";
 	[self.toolbar setItems:@[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil], title, [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil], self.addBot]];
 }
 
+- (IBAction)toggleTrashMode:(id)sender {
+	self.trashMode = !self.trashMode;
+	if (self.botsToDelete.count) {
+		[[SLKBUtilityManager defaultManager] deleteBots:self.botsToDelete];
+		self.trashButton.tintColor = [UIColor blueColor];
+	}
+	else {
+		self.trashButton.tintColor = (self.isInTrashMode) ? [UIColor orangeColor] : [UIColor blueColor];
+	}
+	
+}
 #pragma mark - Users
 - (void)usersLoaded {
 	NSLog(@"Users are ready");

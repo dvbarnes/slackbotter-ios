@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GL7-be-nm7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9Ub-By-I03">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
-        <!--Bot Main Collection View Controller-->
+        <!--Slackbotter-->
         <scene sceneID="Cw2-BC-vj1">
             <objects>
                 <viewController id="GL7-be-nm7" customClass="SLKBBotMainCollectionViewController" sceneMemberID="viewController">
@@ -17,7 +18,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9aY-Kq-Sww">
-                                <rect key="frame" x="0.0" y="73" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ka6-tT-49c">
                                     <size key="itemSize" width="100" height="100"/>
@@ -27,13 +29,16 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BotItem" id="aZt-p0-kws" customClass="SLKBBotCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="64" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <animations/>
+                                        <size key="customSize" width="100" height="100"/>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -42,23 +47,53 @@
                                 </connections>
                             </collectionView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="9aY-Kq-Sww" secondAttribute="centerX" constant="0.5" id="P4u-IA-GS4"/>
-                            <constraint firstAttribute="centerY" secondItem="9aY-Kq-Sww" secondAttribute="centerY" constant="-26.5" id="a7n-Uc-Xe5"/>
-                            <constraint firstAttribute="width" secondItem="9aY-Kq-Sww" secondAttribute="width" id="gDH-DG-JRl"/>
-                            <constraint firstItem="usf-41-xnV" firstAttribute="top" secondItem="9aY-Kq-Sww" secondAttribute="bottom" constant="20" id="wc2-uu-X5V"/>
+                            <constraint firstAttribute="trailing" secondItem="9aY-Kq-Sww" secondAttribute="trailing" id="37y-tL-eKY"/>
+                            <constraint firstItem="usf-41-xnV" firstAttribute="top" secondItem="9aY-Kq-Sww" secondAttribute="bottom" id="L2U-gs-PnF"/>
+                            <constraint firstItem="9aY-Kq-Sww" firstAttribute="top" secondItem="G68-IS-FhE" secondAttribute="top" id="nDb-WV-JNg"/>
+                            <constraint firstItem="9aY-Kq-Sww" firstAttribute="leading" secondItem="G68-IS-FhE" secondAttribute="leading" id="rfu-C6-k9d"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Slackbotter" id="3jS-gV-eSM">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="trash" id="CUW-mc-tL7">
+                            <connections>
+                                <action selector="toggleTrashMode:" destination="GL7-be-nm7" id="fa3-l2-di3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="botCollectionView" destination="9aY-Kq-Sww" id="rRu-Db-Z8c"/>
                         <outlet property="botCollectionViewLayout" destination="ka6-tT-49c" id="4FE-oD-w0Y"/>
+                        <outlet property="trashButton" destination="CUW-mc-tL7" id="6sc-iC-a5h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0uq-wt-STO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-11.5" y="-924.5"/>
+            <point key="canvasLocation" x="1156.5" y="-1055.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2l8-Qx-6rG">
+            <objects>
+                <navigationController id="9Ub-By-I03" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="C79-99-hSs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="GL7-be-nm7" kind="relationship" relationship="rootViewController" id="2Pa-8U-Ium"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gj8-4Y-Xyh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="646" y="-1055"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="oZD-h5-jZI">
@@ -74,13 +109,18 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SMp-K0-PXO">
                                 <rect key="frame" x="0.0" y="110" width="375" height="557"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BotCell" id="UZE-pG-Odc" customClass="SLKBotTableViewCell">
+                                        <rect key="frame" x="0.0" y="86" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UZE-pG-Odc" id="JSZ-jM-1z3">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
                                         </tableViewCellContentView>
+                                        <animations/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -89,6 +129,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="SMp-K0-PXO" secondAttribute="trailing" id="5c1-0m-Wri"/>

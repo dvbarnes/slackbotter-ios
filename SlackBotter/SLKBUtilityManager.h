@@ -14,6 +14,7 @@
 
 - (void)saveBot:(SLKBBot *)bot;
 - (void)loadBots;
+- (void)deleteBots:(NSArray *)botsToDelete;
 - (void)populateSlackUsers;
 - (NSArray *)slackUsers;
 - (NSArray *)allBots;

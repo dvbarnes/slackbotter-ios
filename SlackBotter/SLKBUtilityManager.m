@@ -75,6 +75,7 @@
 	pfBot[@"userGUID"] = [self userGUID];
 	[pfBot saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 		if (succeeded) {
+			bot.parseObject = pfBot;
 			[[NSNotificationCenter defaultCenter] postNotificationName:@"SLKBBotNewBot" object:nil];
 		}
 	}];
@@ -107,6 +108,7 @@
 				bot.botName = pfBot[@"botName"];
 				bot.iconImageURL = pfBot[@"iconImageURL"];
 				bot.guid = pfBot.objectId;
+				bot.parseObject = pfBot;
 				[arrayOfBots addObject:bot];
 			}
 		}
@@ -115,6 +117,21 @@
 			[self.botCache addObjectsFromArray:arrayOfBots];
 		}
 		[[NSNotificationCenter defaultCenter] postNotificationName:@"SLKBBotsReady" object:nil];
+	}];
+}
+
+- (void)deleteBots:(NSArray *)botsToDelete{
+	[PFObject deleteAllInBackground:botsToDelete block:^(BOOL succeeded, NSError * _Nullable error) {
+		NSMutableArray *botsToKill = [NSMutableArray new];
+		for (SLKBBot *bot in self.botCache) {
+			if ([botsToDelete containsObject:bot.parseObject]) {
+				[botsToKill addObject:bot];
+			}
+		}
+		if (botsToKill.count) {
+			[self.botCache removeObjectsInArray:botsToKill];
+		}
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"SLKBBotsDeleted" object:nil];
 	}];
 }
 

@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 @import UIKit;
 @interface SLKBBot : NSObject <NSCoding>
 @property (nonatomic, strong) NSString *botName;
 @property (nonatomic, strong) NSString *iconImageURL;
 @property (nonatomic, strong) NSString *guid;
+@property (nonatomic, strong) PFObject *parseObject;
 - (NSDictionary *)toDictionary;
 @end
