@@ -112,22 +112,22 @@ static NSString * CellIdentifier = @"BotItem";
 		 } completion:^(BOOL finished) {
 			 SLKBSendMessageViewController *sender = [[SLKBSendMessageViewController alloc] initFrame:self.view.frame andBot:bot];
 			 [self resetCell:cell];
-			 UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:sender];
-			 [self presentViewController:navController animated:YES completion:nil];
+			 
+			 [self.navigationController pushViewController:sender animated:YES];
 		 }];
 	 }];
 	}
 	else {
-		if (![self.botsToDelete containsObject:bot.parseObject]) {
+		if (![self.botsToDelete containsObject:bot]) {
 			cell.imageView.alpha = .5;
 			cell.imageView.layer.borderColor = [UIColor orangeColor].CGColor;
 			cell.imageView.layer.borderWidth = 2;
-			[self.botsToDelete addObject:bot.parseObject];
+			[self.botsToDelete addObject:bot];
 			self.trashButton.tintColor = [UIColor redColor];
 		}
 		else {
 			[self resetCell:cell];
-			[self.botsToDelete removeObject:bot.parseObject];
+			[self.botsToDelete removeObject:bot];
 			self.trashButton.tintColor = (self.botsToDelete.count) ? [UIColor redColor] : [UIColor orangeColor];
 		}
 	}

@@ -9,10 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 @import UIKit;
-@interface SLKBBot : NSObject <NSCoding>
-@property (nonatomic, strong) NSString *botName;
-@property (nonatomic, strong) NSString *iconImageURL;
-@property (nonatomic, strong) NSString *guid;
-@property (nonatomic, strong) PFObject *parseObject;
-- (NSDictionary *)toDictionary;
+@interface SLKBBot : PFObject <PFSubclassing>
+@property (retain) NSString *botName;
+@property (retain) NSString *iconImageURL;
+@property (retain) NSString *guid;
++ (NSString *)parseClassName;
 @end

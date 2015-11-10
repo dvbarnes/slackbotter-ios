@@ -70,10 +70,11 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
 }
 
 - (void)initUI {
+	self.inverted = NO;
 	self.view.backgroundColor = [UIColor whiteColor];
-	self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 55) / 2, 74, 55, 55)];
+	self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 55) / 2, 10, 55, 55)];
 	
-	[self.view addSubview:self.imageView];
+	[self.scrollView addSubview:self.imageView];
 	[self.imageView sd_setImageWithURL:[NSURL URLWithString:self.bot.iconImageURL]
 					  placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
 	self.imageView.contentMode = UIViewContentModeScaleAspectFill;
@@ -82,17 +83,17 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
 	self.imageView.layer.borderWidth = 1;
 	self.imageView.layer.masksToBounds = YES;
 	
-	self.pickerTextField = [[UITextField alloc] initWithFrame:CGRectMake(10, 74 + 55 + 10, self.view.frame.size.width - 20, 44)];
+	self.pickerTextField = [[UITextField alloc] initWithFrame:CGRectMake(10, 75, self.view.frame.size.width - 20, 44)];
 	self.pickerTextField.textAlignment = NSTextAlignmentCenter;
 	self.pickerTextField.delegate = self;
-	self.pickerView = [[UIPickerView alloc] initWithFrame:self.view.frame];
+	self.pickerView = [[UIPickerView alloc] init];
 	self.pickerView.delegate = self;
 	self.pickerView.dataSource = self;
 	self.pickerTextField.inputView = self.pickerView;
 	self.pickerTextField.inputAccessoryView = [self generateDoneToolbarWithSize:CGSizeMake(self.view.frame.size.width, 44)
 																	 withTarget:self
 																	andSelector:@selector(closeKeyboard)];
-	[self.view addSubview:self.pickerTextField];
+	[self.scrollView addSubview:self.pickerTextField];
 	self.pickerTextField.borderStyle = UITextBorderStyleRoundedRect;
 	self.pickerTextField.text = [SLKBUtilityManager defaultManager].currentChannel;
 	[[self.pickerTextField valueForKey:@"textInputTraits"] setValue:[UIColor clearColor] forKey:@"insertionPointColor"];
@@ -105,9 +106,7 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
 }
 
 #pragma mark - Slack Overrides
-- (BOOL)canShowAutoCompletion {
-	NSString *prefix = self.foundPrefix;
-	NSString *word = self.foundWord;
+- (void)didChangeAutoCompletionPrefix:(NSString *)prefix andWord:(NSString *)word {
 	if ([prefix isEqualToString:@"@"]) {
 		if (word.length > 0) {
 			self.searchResult = [self.users filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"username BEGINSWITH[c] %@ AND self !=[c] %@", word, word]];
@@ -117,9 +116,9 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
 	if (self.searchResult.count > 0) {
 		self.searchResult = [self.searchResult sortedArrayUsingSelector:@selector(username)];
 	}
-	
-	return self.searchResult.count > 0;
+	[self showAutoCompletionView:YES];
 }
+
 
 - (void)didPressRightButton:(id)sender {
 	[self sendMessage];
@@ -127,6 +126,7 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
 }
 
 #pragma mark - AutoComplete TableView Delegate
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 	return 1;
 }
@@ -139,7 +139,7 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return 50;
+	return 44;
 }
 
 - (CGFloat)heightForAutoCompletionView {
@@ -273,7 +273,7 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
 }
 
 - (void)cancel {
-	[self dismissViewControllerAnimated:YES completion:nil];
+	[self.navigationController popViewControllerAnimated:YES];
 }
 
 
