@@ -74,9 +74,7 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
 	self.view.backgroundColor = [UIColor whiteColor];
 	self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 55) / 2, 10, 55, 55)];
 	
-	[self.scrollView addSubview:self.imageView];
-	[self.imageView sd_setImageWithURL:[NSURL URLWithString:self.bot.iconImageURL]
-					  placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+	[self.imageView sd_setImageWithURL:[NSURL URLWithString:self.bot.iconImageURL] placeholderImage:[UIImage imageNamed:@"placeholder.png"] options:SDWebImageContinueInBackground | SDWebImageProgressiveDownload completed:nil];
 	self.imageView.contentMode = UIViewContentModeScaleAspectFill;
 	self.imageView.layer.cornerRadius = 55/2;
 	self.imageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
