@@ -15,7 +15,7 @@
 #import "SLKBRealTimeMessagingManager.h"
 @interface SLKBBotMainCollectionViewController ()
 @property (nonatomic, strong) NSData *jsonData;
-@property (nonatomic, strong) UIBarButtonItem *addBot;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *addBot;
 @property (nonatomic, getter=isInTrashMode) BOOL trashMode;
 @property (weak, nonatomic) IBOutlet UICollectionView *botCollectionView;
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *botCollectionViewLayout;
@@ -54,7 +54,6 @@ static NSString * CellIdentifier = @"BotItem";
 												 name:@"SLKBBotsDeleted"
 											   object:nil];
 
-	[self addUI];
 	[self.botCollectionView registerClass:[SLKBBotCollectionViewCell class]
 			   forCellWithReuseIdentifier:CellIdentifier];
 	
@@ -151,7 +150,7 @@ static NSString * CellIdentifier = @"BotItem";
 	[self resetCollection];
 }
 
-- (void)addABot {
+- (IBAction)addABot:(id)sender {
 	SLKBNewBotViewController *addForm = [[SLKBNewBotViewController alloc] init];
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:addForm];
 	[self presentViewController:navController animated:YES completion:nil];
@@ -172,18 +171,6 @@ static NSString * CellIdentifier = @"BotItem";
 	}
 }
 
-- (void)addUI {
-	self.toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, 44)];
-	self.toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-	[self.view addSubview:self.toolbar];
-
-	self.addBot = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-	               target:self
-	               action:@selector(addABot)];
-	UIBarButtonItem *title = [[UIBarButtonItem alloc] initWithTitle:@"SlackBotter" style:UIBarButtonItemStylePlain target:nil action:nil];
-	title.tag = 1002;
-	[self.toolbar setItems:@[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil], title, [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil], self.addBot]];
-}
 
 - (IBAction)toggleTrashMode:(id)sender {
 	self.trashMode = !self.trashMode;
