@@ -162,6 +162,7 @@
 		SLKBBot *newBot = [SLKBBot new];
 		newBot.botName = self.botName.text;
 		newBot.iconImageURL = self.botImageURL.text;
+		newBot.userGUID = [SLKBUtilityManager defaultManager].userGUID;
 		[[SLKBUtilityManager defaultManager] saveBot:newBot];
 		[self cancel];
 	} else {

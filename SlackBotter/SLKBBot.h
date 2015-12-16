@@ -13,5 +13,6 @@
 @property (retain) NSString *botName;
 @property (retain) NSString *iconImageURL;
 @property (retain) NSString *guid;
+@property (retain) NSString *userGUID;
 + (NSString *)parseClassName;
 @end

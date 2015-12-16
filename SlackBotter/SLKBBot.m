@@ -12,6 +12,7 @@
 @dynamic botName;
 @dynamic iconImageURL;
 @dynamic guid;
+@dynamic userGUID;
 
 + (void)load {
 	[self registerSubclass];
