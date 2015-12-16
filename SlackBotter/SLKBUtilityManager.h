@@ -10,6 +10,11 @@
 #import "SLKBBot.h"
 @interface SLKBUtilityManager : NSObject
 @property (nonatomic, strong) NSString *currentChannel;
+/**
+ Singleton
+ 
+ @return a singleton of the utility manager.
+ */
 + (instancetype)defaultManager;
 
 - (void)saveBot:(SLKBBot *)bot;
