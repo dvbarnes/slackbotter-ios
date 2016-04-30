@@ -13,7 +13,7 @@
 #import "SLKBUtilityManager.h"
 #import <CRToast.h>
 #import <DZNPhotoPickerController.h>
-@interface SLKBNewBotViewController()<UITextFieldDelegate, UIActionSheetDelegate>
+@interface SLKBNewBotViewController()<UITextFieldDelegate>
 @property (nonatomic, strong) JVFloatLabeledTextField *botName;
 @property (nonatomic, strong) JVFloatLabeledTextField *botImageURL;
 @property (nonatomic, strong) UIImageView *imageView;
@@ -75,8 +75,25 @@
 }
 
 - (void)presentActionSheet {
-	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Choose..." delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Image Search", @"Enter URL", nil];
-	[actionSheet showInView:self.view];
+	UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Get an Image" message:@"Choose a way to get your bot an image!" preferredStyle:UIAlertControllerStyleActionSheet];
+	
+	UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+		[actionSheet dismissViewControllerAnimated:YES completion:nil];
+	}];
+	
+	UIAlertAction *enterURL	= [UIAlertAction actionWithTitle:@"Enter URL" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+		[self presentConfirmation];
+	}];
+	
+	UIAlertAction *imageSearch	= [UIAlertAction actionWithTitle:@"Image Search" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+		[self presentPhotoPicker];
+	}];
+	
+	[actionSheet addAction:imageSearch];
+	[actionSheet addAction:enterURL];
+	[actionSheet addAction:cancelAction];
+	
+	[self presentViewController:actionSheet animated:YES completion:nil];
 }
 
 - (void)presentConfirmation {
@@ -103,23 +120,10 @@
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
 	if (textField == self.botImageURL) {
 		[self presentActionSheet];
+		[self.botName resignFirstResponder];
 		return NO;
 	}
 	return YES;
-}
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-	switch (buttonIndex) {
-		case 0:
-			[self presentPhotoPicker];
-			break;
-		case 1:
-			[self presentConfirmation];
-			break;
-		case 2:
-			[actionSheet dismissWithClickedButtonIndex:buttonIndex animated:YES];
-			break;
-	}
 }
 
 - (void)presentPhotoPicker {
